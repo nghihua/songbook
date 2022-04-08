@@ -40,7 +40,7 @@ export default function Home() {
 				    		<Col key={song.id}>
 						      <Card>
 						        <Card.Img variant="top" src={require('../assets/song.jpg')} />
-						        <Card.Body className="song-body">
+						        <Card.Body>
 						          <Card.Title>{song.title}</Card.Title>
 						          <Card.Text className="song-text">
 						            {song.lyrics}
@@ -51,8 +51,7 @@ export default function Home() {
 				    	)
 				    }
 			    </Row>
-				    
-
+				 
 			  </Card.Body>
 			</Card>
 		</>
