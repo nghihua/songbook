@@ -1,0 +1,16 @@
+.hero {
+	position: absolute;
+	height: 100%;
+}
+
+.auth-card {
+	width: 70vw;
+	max-width: 500px;
+	margin: auto;
+	margin-top: 20vh;
+}
+
+.footer-link {
+	margin-top: 1rem;
+	text-align: end;
+}

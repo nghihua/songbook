@@ -4,7 +4,7 @@ import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 
 export default function HomeNavbar() {
 	return (
-		<Navbar bg="light" expand="lg" fixed="top">
+		<Navbar bg="light" expand="lg" fixed="top" className="">
 		  <Container>
 		    <Navbar.Brand href="#home">SongBook</Navbar.Brand>
 		    <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -23,6 +23,5 @@ export default function HomeNavbar() {
 		    </Navbar.Collapse>
 		  </Container>
 		</Navbar>
-		//<Button>hehe</Button>
 	)
 }

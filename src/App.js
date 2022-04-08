@@ -1,6 +1,7 @@
 import React from 'react';
 import Redux from './components/Redux.js';
 import Home from './components/Home.js';
+import Auth from './components/Auth.js';
 import Navbar from './components/shared/HomeNavbar.js';
 
 // router
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/redux" element={<Redux />} />
+        <Route path="/auth/*" element={<Auth />} />
       </Routes>
     </BrowserRouter>
   );
