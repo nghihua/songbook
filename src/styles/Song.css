@@ -1,0 +1,10 @@
+.song-hero {
+	width: 100%;
+	height: 50vmin;
+	object-fit: cover;
+}
+
+.song-lyrics {
+	white-space: pre-line;
+	text-align: center;
+}

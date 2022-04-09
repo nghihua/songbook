@@ -13,10 +13,10 @@ export default function Auth() {
 		<>
 			<Image
 				src={require('../assets/hero.jpg')}
-				className="hero">
+				className="auth-background">
 			</Image>
 
-			<div className="fixed-top h-100 w-100">
+			<div className="fixed h-100 w-100">
 				<Routes>
 		            <Route path="login" element={<Login/>}/>
 		            <Route path="register" element={<Register/>}/>

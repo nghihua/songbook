@@ -37,7 +37,7 @@ export default function Register() {
 			  </Form.Group>
 			</Form>
 
-			<div className="footer-link">
+			<div className="auth-footer-link">
 				<Link to="/auth/login">
 					<small>Already has an account?</small>
 				</Link>

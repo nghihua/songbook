@@ -33,7 +33,7 @@ export default function Login() {
 			  </Form.Group>
 			</Form>
 
-			<div className="footer-link">
+			<div className="auth-footer-link">
 				<Link to="/auth/register">
 					<small>Create new account</small>
 				</Link>
