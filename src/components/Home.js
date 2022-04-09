@@ -4,6 +4,8 @@ import { Row, Col, Image, Card, Button } from 'react-bootstrap';
 
 import '../styles/Home.css';
 
+import { NavLink } from "react-router-dom";
+
 const songs = [
 	{id: 1, title: "Your Firefly", artist:"AirDice", lyrics: `When the sun comes, you're my shade
 When the moon comes, you're a little firefly
@@ -27,7 +29,7 @@ export default function Home() {
 		<>
 			<Image
 				src={require('../assets/hero.jpg')}
-				className="hero">
+				className="home-hero">
 			</Image>
 
 			<Card>
@@ -38,18 +40,24 @@ export default function Home() {
 				    	songs &&
 				    	songs.map((song) => 
 				    		<Col key={song.id}>
-						      <Card>
+
+				    		
+						    <Card>
 						        <Card.Img variant="top" src={require('../assets/song.jpg')} />
 						        <Card.Body>
-						          <Card.Title>{song.title}</Card.Title>
-						          <small className="blockquote-footer">
-							        <cite title={song.artist}>{song.artist}</cite>
-							      </small>
-						          <Card.Text className="lyrics">
-						            {song.lyrics}
-						          </Card.Text>
+						        	<NavLink to="/song" className="link">
+						        		<Card.Title>{song.title}</Card.Title>
+						        	</NavLink>
+						        	<small className="blockquote-footer">
+							        	<cite title={song.artist}>{song.artist}</cite>
+							    	</small>
+						        	<Card.Text className="home-lyrics">
+						            	{song.lyrics}
+						        	</Card.Text>
 						        </Card.Body>
-						      </Card>
+						    </Card>
+						    
+
 						    </Col>
 				    	)
 				    }
