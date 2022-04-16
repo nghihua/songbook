@@ -4,16 +4,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
 import { store } from './app/store';
-import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
-import { dom } from '@fortawesome/fontawesome-svg-core';
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { GlobalProvider } from './context/GlobalContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
+    <GlobalProvider>
       <App />
-    </Provider>
+    </GlobalProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
@@ -22,6 +21,3 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
-
-// Kick of the initial replacement of i to svg tags and configure a MutationObserver
-dom.watch();

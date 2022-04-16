@@ -1,12 +1,13 @@
 import React from 'react';
-import Redux from './components/Redux.js';
-import Home from './components/Home.js';
-import Auth from './components/Auth.js';
-import Song from './components/Song.js';
+import Redux from './pages/Redux.js';
+import Context from './pages/Context.js';
+import Home from './pages/Home.js';
+import Auth from './pages/Auth.js';
+import Song from './pages/Song.js';
 
-import Navbar from './components/shared/HomeNavbar.js';
-import Footer from './components/shared/Footer.js';
-import AudioPlayer from './components/shared/AudioPlayer.js';
+import Navbar from './components//HomeNavbar.js';
+import Footer from './components//Footer.js';
+import AudioPlayer from './components//AudioPlayer.js';
 
 // router
 import { render } from "react-dom";
@@ -24,6 +25,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/redux" element={<Redux />} />
+        <Route path="/context" element={<Context />} />
         <Route path="/auth/*" element={<Auth />} />
         <Route path="/song" element={<Song />} />
       </Routes>
