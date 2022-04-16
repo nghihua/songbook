@@ -13,6 +13,7 @@ export const authApi = {
 
     const response = await fetch(`${apiUrl}/auth/register`, {
       method: 'POST',
+      credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
       },
@@ -23,15 +24,16 @@ export const authApi = {
 
   },
 
-  login: async (email, password) => {
+  login: async ({email, password}) => {
 
     const payload = {
       email,
       password
     };
 
-    const response = await fetch(`${apiUrl}/auth/register`, {
+    const response = await fetch(`${apiUrl}/auth/login`, {
       method: 'POST',
+      credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
       },
@@ -46,6 +48,7 @@ export const authApi = {
 
     const response = await fetch(`${apiUrl}/auth/verifyEmail/${token}`, {
       method: 'GET',
+      credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
       }
@@ -59,6 +62,7 @@ export const authApi = {
 
     const response = await fetch(`${apiUrl}/auth/logout`, {
       method: 'GET',
+      credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
       }
