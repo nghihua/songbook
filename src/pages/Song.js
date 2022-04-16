@@ -45,18 +45,21 @@ export default function Song() {
 					backgroundSize: 'cover',
 					paddingTop: '100px'
 				}} 
-				className="align-self-end container-fluid text-start text-md-left"
+				className="align-self-end container-fluid text-start text-md-left pb-md-4"
 			>
                 <div className="row">
                     <div className="col-md-6 mt-md-0 my-3 d-flex align-items-center justify-content-center">
                         <h1 className="text-uppercase">{ song.title }</h1>
                     </div>
 
-                    <cite 
-                    	style={{ fontFamily: "'Indie Flower', cursive", fontSize: '25px' }} 
-                    	className="col-md-6 mb-md-0 mb-3 px-5">
-                        "{ song.description }"
-                    </cite>
+                    <blockquote 
+                    	style={{ 
+                    		fontFamily: "'Indie Flower', cursive",
+                    		background: "rgba(255, 255, 255, 0.3)"
+                    	}} 
+                    	className="col-md-6 mb-md-0 mb-5 p-4">
+                        “ { song.description }”
+                    </blockquote>
                 </div>
             </div>
 
