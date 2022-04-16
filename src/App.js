@@ -29,7 +29,7 @@ function App() {
         <Route path="/auth/*" element={<Auth />} />
         <Route path="/song" element={<Song />} />
       </Routes>
-      <AudioPlayer />
+      <AudioPlayer /  >
       <Footer />
     </BrowserRouter>
   );

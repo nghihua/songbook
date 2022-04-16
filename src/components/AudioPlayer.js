@@ -13,7 +13,7 @@ export default function AudioPlayer() {
 	return (
     <div 
       className="container-fluid text-center text-md-left fixed-bottom pt-md-2"
-      style={{background: "rgba(240, 240, 240, 0.8)"}}
+      style={{background: "rgba(255, 255, 255, 0.8)"}}
     >
         <div className="row">
             <div className="col-md-4 mt-2">

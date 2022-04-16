@@ -31,26 +31,42 @@ Nobody's gonna tell you how to live
 Nobody's gonna tell you how to live
 Nobody's gonna tell you how to live
 Nobody's gonna tell you how to live
-Cause nobody understands just what it is`
+Cause nobody understands just what it is`,
+	description: `I listened to this song when I was still lost in life. What to do, who to be, it was all a mystery. You are only ever sure of yourself through trials and errors. It's like you're given a randomized character when you enter this game, and only through time can you figure out its quirks. No detailed description for you, and no one can ever tell you what to do, who to be.`
 };
 
 export default function Song() {
 	return (
 		<>
+			<div 
+				style={{ 
+					backgroundImage: 'url("https://media.istockphoto.com/photos/sky-in-the-pink-and-blue-colors-effect-of-light-pastel-colored-of-picture-id1061786490?k=20&m=1061786490&s=612x612&w=0&h=YlXFrKAG-V95qWLI_u5kvQ515noO42Xj3CVnq3GgRB8=")',
+					backgroundRepeat: 'no-repeat',
+					backgroundSize: 'cover',
+					paddingTop: '100px'
+				}} 
+				className="align-self-end container-fluid text-start text-md-left"
+			>
+                <div className="row">
+                    <div className="col-md-6 mt-md-0 my-3 d-flex align-items-center justify-content-center">
+                        <h1 className="text-uppercase">{ song.title }</h1>
+                    </div>
 
-			<Card className="bg-dark text-white">
-			  <Card.Img src="https://media.istockphoto.com/photos/sky-in-the-pink-and-blue-colors-effect-of-light-pastel-colored-of-picture-id1061786490?k=20&m=1061786490&s=612x612&w=0&h=YlXFrKAG-V95qWLI_u5kvQ515noO42Xj3CVnq3GgRB8=" className="song-hero" alt="Card image" />
-			  <Card.ImgOverlay className="d-flex">
-			    <h1 className="align-self-end mx-auto mt-30">{song.title}</h1>
-			  </Card.ImgOverlay>
-			</Card>
+                    <cite 
+                    	style={{ fontFamily: "'Indie Flower', cursive", fontSize: '25px' }} 
+                    	className="col-md-6 mb-md-0 mb-3 px-5">
+                        "{ song.description }"
+                    </cite>
+                </div>
+            </div>
 
 			<Card>
 			  <Card.Header as="h5" className="text-center">Lyrics</Card.Header>
 			  <Card.Body>
-				 <Card.Text className="song-lyrics">{song.lyrics}</Card.Text>
+				 <Card.Text className="song-lyrics pb-5">{song.lyrics}</Card.Text>
 			  </Card.Body>
 			</Card>
+
 		</>
 	)
 }
