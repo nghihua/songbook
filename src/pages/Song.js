@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Row, Col, Image, Card, Button } from 'react-bootstrap';
 
 import '../styles/Song.css';
 
+import { useGlobalContext } from '../context/GlobalContext';
+
 const song = {
 	key: 1,
 	title: "What It Is",
+	artist: "Kodaline",
+	link: "https://www.dl.dropboxusercontent.com/s/edek16sfvwl4jsh/NocturneInAMinor.mp3?dl=0",
 	lyrics: `So you're standing in the parking lot of life
 And you're trying to figure out your fate tonight
 And you hear a sound coming out of the car radio
@@ -36,6 +40,29 @@ Cause nobody understands just what it is`,
 };
 
 export default function Song() {
+
+	const { track, setTitle, setArtist, setLink } = useGlobalContext();
+
+	const [isPlaying, setIsPlaying] = useState(false);
+
+	useEffect(() => {
+		if (track.link == song.link) {
+			console.log("this track is playing");
+		}
+		else {
+			console.log("this track is NOT playing");
+		}
+	}, [track]);
+
+	const playSong = async () => {
+		console.log("play song");
+		await setTitle(song.title);
+		await setArtist(song.artist);
+		await setLink(song.link);
+		console.log(track);
+	}
+
+
 	return (
 		<>
 			<div 
@@ -49,7 +76,16 @@ export default function Song() {
 			>
                 <div className="row">
                     <div className="col-md-6 mt-md-0 my-3 d-flex align-items-center justify-content-center">
-                        <h1 className="text-uppercase">{ song.title }</h1>
+                        <h1 className="text-uppercase">
+                        	{ song.title } <span>
+				                        		<i 
+				                        			role="button"
+				                        			className={`fa-solid fa-circle-play`}
+				                        			onClick={playSong}
+				                        		>
+				                        		</i>
+				                        	</span>
+                        </h1>
                     </div>
 
                     <blockquote 

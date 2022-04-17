@@ -4,11 +4,14 @@ import * as types from './constants';
 
 
 const initialState = {
-  song: {
-    title: "Nocturne In A Minor",
-    artist: "Unknown",
-    link: "https://www.dl.dropboxusercontent.com/s/edek16sfvwl4jsh/NocturneInAMinor.mp3?dl=0",
-  }
+  track: {
+    title: "None",
+    artist: "N/A",
+    link: "",
+  },
+  setTitle: () => {},
+  setArtist: () => {},
+  setLink: () => {}
 };
 
 

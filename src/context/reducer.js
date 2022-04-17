@@ -5,8 +5,8 @@ const reducer = (state, { type, payload }) => {
     case types.SET_TITLE: {
       return {
         ...state,
-        song: {
-          ...state.user,
+        track: {
+          ...state.track,
           title: payload,
         },
       };
@@ -14,8 +14,8 @@ const reducer = (state, { type, payload }) => {
     case types.SET_ARTIST: {
       return {
         ...state,
-        song: {
-          ...state.user,
+        track: {
+          ...state.track,
           artist: payload,
         },
       };
@@ -23,8 +23,8 @@ const reducer = (state, { type, payload }) => {
     case types.SET_LINK: {
       return {
         ...state,
-        song: {
-          ...state.user,
+        track: {
+          ...state.track,
           link: payload,
         },
       };

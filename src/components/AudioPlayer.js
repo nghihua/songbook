@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import ReactAudioPlayer from 'react-audio-player';
 
@@ -8,7 +8,17 @@ import { useGlobalContext } from '../context/GlobalContext';
 
 export default function AudioPlayer() {
 
-    const { song } = useGlobalContext();
+    const audioRef = useRef(null);
+
+    const { track } = useGlobalContext();
+
+    useEffect(() => {
+        return async () => {
+            if (audioRef.current){
+                audioRef.current.load();
+            }
+        }
+    }, [track]);
 
 	return (
     <div 
@@ -17,12 +27,12 @@ export default function AudioPlayer() {
     >
         <div className="row">
             <div className="col-md-4 mt-2">
-                <p><span><strong>{song.title}</strong></span> - {song.artist}</p>
+                <p><span><strong>{track.title}</strong></span> - {track.artist}</p>
             </div>
 
             <div className="col-md-8 d-flex mb-1">
-                <audio controls loop controlsList="nodownload" className="w-100">
-                  <source src={song.link} type="audio/mp3"/>
+                <audio ref={audioRef} controls loop controlsList="nodownload" autoPlay className="w-100">
+                  <source src={track.link} type="audio/mp3"/>
                 Your browser does not support the audio element.
                 </audio>
             </div>
