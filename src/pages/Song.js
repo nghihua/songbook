@@ -47,19 +47,24 @@ export default function Song() {
 
 	useEffect(() => {
 		if (track.link == song.link) {
-			console.log("this track is playing");
+			setIsPlaying(true);
 		}
 		else {
-			console.log("this track is NOT playing");
+			setIsPlaying(false);
 		}
 	}, [track]);
 
 	const playSong = async () => {
-		console.log("play song");
-		await setTitle(song.title);
-		await setArtist(song.artist);
-		await setLink(song.link);
-		console.log(track);
+		if (track.link == song.link) {
+			setTitle("None");
+			setArtist("N/A");
+			setLink(null);
+		}
+		else {
+			setTitle(song.title);
+			setArtist(song.artist);
+			setLink(song.link);
+		}
 	}
 
 
@@ -80,7 +85,7 @@ export default function Song() {
                         	{ song.title } <span>
 				                        		<i 
 				                        			role="button"
-				                        			className={`fa-solid fa-circle-play`}
+				                        			className={`fa-solid ${isPlaying? "fa-circle-stop" : "fa-circle-play"}`}
 				                        			onClick={playSong}
 				                        		>
 				                        		</i>
